@@ -91,3 +91,62 @@ export const footerBottomMenu = [
     icon: "",
   },
 ];
+
+export const dataTable = [
+  {
+    id: 1,
+    name: "Starbucks",
+    icon: "/assets/images/company/1.png",
+    date: "25 December 2023",
+    time: "10:24",
+    point: 50,
+  },
+  {
+    id: 2,
+    name: "Circooles",
+    icon: "/assets/images/company/2.png",
+    date: "22 December 2023",
+    time: "14:00",
+    point: 73,
+  },
+  {
+    id: 3,
+    name: "Command+R",
+    icon: "/assets/images/company/3.png",
+    date: "15 December 2023",
+    time: "22:00",
+    point: 103,
+  },
+  {
+    id: 4,
+    name: "Hourglass",
+    icon: "/assets/images/company/4.png",
+    date: "2 December 2023",
+    time: "19:45",
+    point: 50,
+  },
+  {
+    id: 5,
+    name: "Layers",
+    icon: "/assets/images/company/5.png",
+    date: "29 November 2023",
+    time: "15:19",
+    point: 50,
+  },
+  {
+    id: 6,
+    name: "Quotient",
+    icon: "/assets/images/company/6.png",
+    date: "12 November 2023",
+    time: "07:23",
+    point: 100,
+  },
+  {
+    id: 7,
+    name: "Quotient",
+    icon: "/assets/images/company/7.png",
+    date: "12 November 2023",
+    time: "12:00",
+    point: 97,
+  },
+];
