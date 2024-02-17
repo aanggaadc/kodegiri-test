@@ -150,3 +150,5 @@ export const dataTable = [
     point: 97,
   },
 ];
+
+export const excludedPath = ["/signin"];

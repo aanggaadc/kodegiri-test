@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
-import { headerMenu } from "../../constant";
+import { Link, useLocation } from "react-router-dom";
+import { headerMenu, excludedPath } from "../../constant";
 import Styles from "./index.module.scss";
 
 export default function Header() {
+  const location = useLocation();
+
+  const shouldNotRender = excludedPath.includes(location.pathname);
+
+  if (shouldNotRender) return null;
   return (
     <header className={Styles.wrapper}>
       <div className={Styles.container}>
