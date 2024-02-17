@@ -10,6 +10,7 @@
 
 body {
   position: relative;
+  font-family: "Plus Jakarta Sans";
 }
 
 main {
@@ -23,4 +24,13 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+  border: none;
+  appearance: none;
+  background: none;
+}
+
+.main-wrapper {
+  width: 100%;
+  max-width: 1441px;
+  margin-inline: auto;
 }
