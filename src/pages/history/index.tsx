@@ -1,7 +1,5 @@
 import { dataTable } from "../../constant";
 import Styles from "./index.module.scss";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
 
 import ArrowRight from "../../components/icons/arrow-right";
 import ArrowLeft from "../../components/icons/arrow-left";
@@ -9,10 +7,6 @@ import ArrowDown from "../../components/icons/arrow-down";
 import MoreVertical from "../../components/icons/more-vertical";
 
 export default function History() {
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-
-  console.log(isLoggedIn);
-
   return (
     <div className={Styles.container}>
       <div className={Styles.header}>
@@ -48,36 +42,40 @@ export default function History() {
         </div>
 
         <table className={Styles.table}>
-          <tr>
-            <th className={Styles.firstColumn}>
-              <div className={Styles.flex}>
-                Merchant
-                <ArrowDown />
-              </div>
-            </th>
-            <th className={Styles.secondColumn}>Date</th>
-            <th className={Styles.thirdColumn}>Time</th>
-            <th className={Styles.fourthColumn}>Earned Points</th>
-            <th className={Styles.fifthColumn}></th>
-          </tr>
-          {dataTable.map((data) => (
-            <tr key={data.id}>
-              <td className={Styles.firstColumn}>
+          <thead>
+            <tr>
+              <th className={Styles.firstColumn}>
                 <div className={Styles.flex}>
-                  <img src={data.icon} alt={data.name} />
-                  {data.name}
+                  Merchant
+                  <ArrowDown />
                 </div>
-              </td>
-              <td className={Styles.secondColumn}>{data.date}</td>
-              <td className={Styles.thirdColumn}>{data.time}</td>
-              <td className={Styles.fourthColumn}>
-                <div className={Styles.point}>+ {data.point} Point</div>
-              </td>
-              <td className={Styles.fifthColumn}>
-                <MoreVertical />
-              </td>
+              </th>
+              <th className={Styles.secondColumn}>Date</th>
+              <th className={Styles.thirdColumn}>Time</th>
+              <th className={Styles.fourthColumn}>Earned Points</th>
+              <th className={Styles.fifthColumn}></th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {dataTable.map((data) => (
+              <tr key={data.id}>
+                <td className={Styles.firstColumn}>
+                  <div className={Styles.flex}>
+                    <img src={data.icon} alt={data.name} />
+                    {data.name}
+                  </div>
+                </td>
+                <td className={Styles.secondColumn}>{data.date}</td>
+                <td className={Styles.thirdColumn}>{data.time}</td>
+                <td className={Styles.fourthColumn}>
+                  <div className={Styles.point}>+ {data.point} Point</div>
+                </td>
+                <td className={Styles.fifthColumn}>
+                  <MoreVertical />
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
 
         <div className={Styles.pagination}>
