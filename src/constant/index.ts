@@ -151,4 +151,4 @@ export const dataTable = [
   },
 ];
 
-export const excludedPath = ["/signin"];
+export const excludedPath = ["/signin", "/register"];

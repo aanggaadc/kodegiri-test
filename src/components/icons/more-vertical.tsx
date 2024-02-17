@@ -19,7 +19,7 @@ export default function MoreVertical({ stroke }: { stroke?: string }) {
         stroke={stroke ?? "#98A2B3"}
         strokeWidth="1.66667"
         strokeLinecap="round"
-        stroke-Linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.0013 16.6666C10.4615 16.6666 10.8346 16.2935 10.8346 15.8333C10.8346 15.373 10.4615 14.9999 10.0013 14.9999C9.54106 14.9999 9.16797 15.373 9.16797 15.8333C9.16797 16.2935 9.54106 16.6666 10.0013 16.6666Z"

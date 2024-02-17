@@ -1,41 +1,45 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { setLoggedIn } from "../../redux/authSlice";
-import { RootState } from "../../redux/store";
+import { useDispatch } from "react-redux";
+import { setUsers } from "../../redux/usersSlice";
 
 import LayaouteLogo from "../../components/icons/layaoute-logo";
 import EyeIcon from "../../components/icons/eye";
 import Styles from "./index.module.scss";
 
-export default function SignIn() {
+export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const users = useSelector((state: RootState) => state.users.users);
 
   const [showPassword, setShowPassword] = useState(false);
   const [data, setData] = useState({
+    name: "",
     email: "",
+    phoneCode: "+62",
+    phoneNumber: "",
     password: "",
   });
 
-  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const foundUser = users.find(
-      (user) => user.email === data.email && user.password === data.password
-    );
+    const payload = {
+      name: data.name,
+      email: data.email,
+      phoneNumber: `${data.phoneCode}${data.phoneNumber}`,
+      password: data.password,
+    };
 
-    if (foundUser) {
-      dispatch(setLoggedIn(true));
-      navigate("/history");
-    } else {
-      alert("User not found or incorrect password");
-    }
+    dispatch(setUsers(payload));
+    navigate("/signin");
   };
 
   return (
@@ -45,13 +49,21 @@ export default function SignIn() {
       </div>
 
       <div className={Styles.content}>
-        <h2 className={Styles.title}>Let's sign You In.</h2>
+        <h2 className={Styles.title}>Create an account</h2>
         <p className={Styles.subTitle}>
-          Hey there, fabulous! Ready to kick back and explore? Just a quick
-          sign-in away from unlocking a world of fun.
+          New around here? Awesome choice! Let's make it official.
         </p>
 
         <form onSubmit={handleSubmit}>
+          <input
+            name="name"
+            type="text"
+            value={data.name}
+            className={Styles.input}
+            placeholder="Name"
+            onChange={handleOnChange}
+          />
+
           <input
             name="email"
             type="email"
@@ -60,6 +72,25 @@ export default function SignIn() {
             placeholder="Email"
             onChange={handleOnChange}
           />
+
+          <div className={Styles.inputPhone}>
+            <select
+              onChange={handleOnChange}
+              name="phoneCode"
+              className={Styles.select}
+            >
+              <option value="+62">+62</option>
+              <option value="+65">+65</option>
+            </select>
+
+            <input
+              name="phoneNumber"
+              value={data.phoneNumber}
+              placeholder="Phone Number"
+              onChange={handleOnChange}
+            />
+          </div>
+
           <div className={Styles.inputPassword}>
             <input
               name="password"
@@ -89,7 +120,7 @@ export default function SignIn() {
           </button>
 
           <div className={`${Styles.linkTo} ${Styles.register}`}>
-            Haven't registered yet ? <Link to="/register">Register</Link>
+            Already registered ? <Link to="/signin">Signin</Link>
           </div>
         </form>
       </div>

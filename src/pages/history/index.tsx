@@ -1,5 +1,7 @@
 import { dataTable } from "../../constant";
 import Styles from "./index.module.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 import ArrowRight from "../../components/icons/arrow-right";
 import ArrowLeft from "../../components/icons/arrow-left";
@@ -7,6 +9,10 @@ import ArrowDown from "../../components/icons/arrow-down";
 import MoreVertical from "../../components/icons/more-vertical";
 
 export default function History() {
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
+
+  console.log(isLoggedIn);
+
   return (
     <div className={Styles.container}>
       <div className={Styles.header}>
