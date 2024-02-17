@@ -28,3 +28,66 @@ export const headerMenu = [
     iconActive: "/assets/icon/profile.svg",
   },
 ];
+
+export const categoryMenu = [
+  {
+    id: 1,
+    name: "Latest Promo",
+    path: "/",
+    icon: "",
+  },
+  {
+    id: 2,
+    name: "Popular Merchant",
+    path: "/",
+    icon: "",
+  },
+  {
+    id: 3,
+    name: "Popular Rewards",
+    path: "/",
+    icon: "",
+  },
+];
+
+export const socialMediaList = [
+  {
+    id: 1,
+    name: "twitter",
+    path: "https://www.twitter.com",
+    icon: "/assets/icons/twitter.svg",
+  },
+  {
+    id: 2,
+    name: "linkedin",
+    path: "https://www.linkedin.com",
+    icon: "/assets/icons/linkedin.svg",
+  },
+  {
+    id: 3,
+    name: "facebook",
+    path: "https://www.facebook.com",
+    icon: "/assets/icons/facebook.svg",
+  },
+];
+
+export const footerBottomMenu = [
+  {
+    id: 1,
+    name: "Política de Privacidad",
+    path: "/",
+    icon: "",
+  },
+  {
+    id: 2,
+    name: "Términos y Condiciones",
+    path: "/",
+    icon: "",
+  },
+  {
+    id: 3,
+    name: "Código de Conducta",
+    path: "/",
+    icon: "",
+  },
+];
