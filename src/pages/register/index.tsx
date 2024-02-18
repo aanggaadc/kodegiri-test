@@ -1,24 +1,37 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUsers } from "../../redux/usersSlice";
 
+import Form from "./form";
+import Otp from "./otp";
 import LayaouteLogo from "../../components/icons/layaoute-logo";
-import EyeIcon from "../../components/icons/eye";
 import Styles from "./index.module.scss";
+
+export type RegisterType = {
+  name: string;
+  email: string;
+  phoneCode: string;
+  phoneNumber: string;
+  password: string;
+};
 
 export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [stage, setStage] = useState("form");
+  const [otp, setOtp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [data, setData] = useState({
+  const [data, setData] = useState<RegisterType>({
     name: "",
     email: "",
     phoneCode: "+62",
     phoneNumber: "",
     password: "",
   });
+
+  const onChangeOtp = (value: string) => setOtp(value);
 
   const handleOnChange = (
     e:
@@ -28,9 +41,12 @@ export default function Register() {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleToOtp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStage("otp");
+  };
 
+  const handleSubmit = () => {
     const payload = {
       name: data.name,
       email: data.email,
@@ -49,80 +65,32 @@ export default function Register() {
       </div>
 
       <div className={Styles.content}>
-        <h2 className={Styles.title}>Create an account</h2>
+        <h2 className={Styles.title}>
+          {stage === "form" ? "Create an account" : "Enter OTP Verification"}
+        </h2>
+
         <p className={Styles.subTitle}>
-          New around here? Awesome choice! Let's make it official.
+          {stage === "form"
+            ? "New around here? Awesome choice! Let's make it official"
+            : `We’ve sent an OTP code to  ${data.phoneCode} ${data.phoneNumber}`}
         </p>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            name="name"
-            type="text"
-            value={data.name}
-            className={Styles.input}
-            placeholder="Name"
-            onChange={handleOnChange}
+        {stage === "form" ? (
+          <Form
+            data={data}
+            showPassword={showPassword}
+            setShowPassword={setShowPassword}
+            handleToOtp={handleToOtp}
+            handleOnChange={handleOnChange}
           />
-
-          <input
-            name="email"
-            type="email"
-            value={data.email}
-            className={Styles.input}
-            placeholder="Email"
-            onChange={handleOnChange}
+        ) : (
+          <Otp
+            onChange={onChangeOtp}
+            value={otp}
+            valueLength={4}
+            handleSubmit={handleSubmit}
           />
-
-          <div className={Styles.inputPhone}>
-            <select
-              onChange={handleOnChange}
-              name="phoneCode"
-              className={Styles.select}
-            >
-              <option value="+62">+62</option>
-              <option value="+65">+65</option>
-            </select>
-
-            <input
-              name="phoneNumber"
-              value={data.phoneNumber}
-              placeholder="Phone Number"
-              onChange={handleOnChange}
-            />
-          </div>
-
-          <div className={Styles.inputPassword}>
-            <input
-              name="password"
-              value={data.password}
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              onChange={handleOnChange}
-            />
-            <button
-              type="button"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              <EyeIcon />
-            </button>
-          </div>
-
-          <div className={`${Styles.linkTo} ${Styles.forgot}`}>
-            Forgot password ? <Link to="/">Reset Password</Link>
-          </div>
-
-          <button
-            disabled={!data.email || !data.password}
-            className={Styles.btnSubmit}
-            type="submit"
-          >
-            Sign In
-          </button>
-
-          <div className={`${Styles.linkTo} ${Styles.register}`}>
-            Already registered ? <Link to="/signin">Signin</Link>
-          </div>
-        </form>
+        )}
       </div>
     </div>
   );

@@ -275,3 +275,5 @@ export const rewardList = [
     point: 87,
   },
 ];
+
+export const RE_DIGIT = new RegExp(/^\d+$/);

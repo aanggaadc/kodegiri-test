@@ -8,6 +8,11 @@
   justify-content: center;
 }
 
+.otpContainer {
+  display: flex;
+  gap: 16px;
+}
+
 .logo {
   margin-bottom: 16px;
 }
@@ -50,6 +55,14 @@
   line-height: 24px;
   letter-spacing: -0.01em;
   margin-bottom: 16px;
+}
+
+.inputOtp {
+  width: 69.75px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
 }
 
 .inputPhone {
@@ -132,6 +145,11 @@
   }
 
   &.forgot {
+    margin-bottom: 48px;
+  }
+
+  &.otp {
+    text-align: center;
     margin-bottom: 48px;
   }
 
