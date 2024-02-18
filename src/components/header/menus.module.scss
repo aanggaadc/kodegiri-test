@@ -1,0 +1,25 @@
+.menus {
+  display: flex;
+  align-items: center;
+  gap: 57px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  img {
+    width: 28px;
+    height: 28px;
+  }
+
+  p {
+    font-family: "Plus Jakarta Sans";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: -0.01em;
+  }
+}

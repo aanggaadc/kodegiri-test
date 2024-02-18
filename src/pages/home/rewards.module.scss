@@ -1,0 +1,65 @@
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.container {
+  width: 100%;
+  padding: 56px 223px 72px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #272a2d;
+  margin-bottom: 8px;
+}
+
+.subTitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  margin-bottom: 48px;
+  color: #959595;
+}
+
+.categoryTab {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.btnCategory {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 4px;
+  background: #f6f7fb;
+  border-radius: 100px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  color: #232323;
+
+  &.active {
+    background: #0074e0;
+    color: #fff;
+  }
+}
+
+.categoryIcon {
+  width: 18px;
+}
+
+.rewardList {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}

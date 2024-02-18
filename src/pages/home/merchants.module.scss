@@ -1,0 +1,61 @@
+.wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.container {
+  width: 100%;
+  padding: 56px 223px 72px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #272a2d;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #007dfc;
+  }
+}
+
+.merchantList {
+  display: flex;
+  gap: 55px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: calc(16.666% - 46px);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #272a2d;
+  }
+}
