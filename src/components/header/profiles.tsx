@@ -4,7 +4,7 @@ import Styles from "./profiles.module.scss";
 export default function ProfilesHeader({ isHome }: { isHome: boolean }) {
   return (
     <div className={Styles.profiles}>
-      <NotificationIcon fill={isHome ? "fff" : undefined} />
+      <NotificationIcon fill={isHome ? "#fff" : undefined} />
 
       <div className={`${Styles.profile} ${isHome ? Styles.home : null}`}>
         <span>

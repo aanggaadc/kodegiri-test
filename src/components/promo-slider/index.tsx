@@ -65,6 +65,7 @@ export default function PromoSlider() {
 
         {Array.from({ length: 3 }).map((_, index) => (
           <button
+            key={index}
             onClick={() => handleDotClick(index)}
             className={`${Styles.dots} ${
               index === activeSlide ? Styles.active : null
