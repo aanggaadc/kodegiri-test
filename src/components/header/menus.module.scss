@@ -21,5 +21,10 @@
     font-weight: 600;
     line-height: 23px;
     letter-spacing: -0.01em;
+    text-transform: capitalize;
+
+    &.home {
+      color: #fff;
+    }
   }
 }

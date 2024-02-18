@@ -27,8 +27,8 @@ export default function Header() {
     <header className={`${Styles.wrapper} ${isHome ? Styles.home : null}`}>
       <div className={Styles.container}>
         <HeaderLogo isHome={isHome} />
-        <MenusHeader />
-        <ProfilesHeader />
+        <MenusHeader isHome={isHome} />
+        <ProfilesHeader isHome={isHome} />
       </div>
     </header>
   );
