@@ -47,7 +47,14 @@ const Routing = () => {
           </ProtectedRoute>
         }
       />
-      <Route path="/voucher-detail" element={<VoucherDetail />} />
+      <Route
+        path="/voucher-detail"
+        element={
+          <ProtectedRoute isAllowed={isLoggedIn} redirectTo="/signin">
+            <VoucherDetail />
+          </ProtectedRoute>
+        }
+      />
       <Route path="*" element={<NotFound />} errorElement={<NotFound />} />
     </Routes>
   );

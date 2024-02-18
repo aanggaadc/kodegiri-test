@@ -38,6 +38,7 @@ export default function Rewards() {
               brandLogo={reward.brandLogo}
               brandName={reward.brandName}
               point={reward.point}
+              path="/voucher-detail"
             />
           ))}
         </div>
