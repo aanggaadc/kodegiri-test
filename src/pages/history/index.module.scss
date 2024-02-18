@@ -1,5 +1,7 @@
 .container {
   width: 100%;
+  max-width: 1441px;
+  margin-inline: auto;
   padding: 60px 222px 108px;
 }
 
@@ -68,10 +70,9 @@
 
 .card {
   width: 100%;
+  overflow: hidden;
   border: 1px solid #eaecf0;
   border-radius: 12px;
-
-  box-shadow: 0px 2px 4px -2px #1018280f;
   box-shadow: 0px 4px 8px -2px #1018281a;
 }
 

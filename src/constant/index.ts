@@ -1,28 +1,28 @@
 export const headerMenu = [
   {
     id: 1,
-    name: "Home",
+    name: "home",
     path: "/",
     icon: "/assets/icons/home.svg",
     iconActive: "/assets/icon/home-active.svg",
   },
   {
     id: 2,
-    name: "History",
+    name: "history",
     path: "/history",
     icon: "/assets/icons/calendar.svg",
     iconActive: "/assets/icon/calendar-active.svg",
   },
   {
     id: 3,
-    name: "Inbox",
+    name: "inbox",
     path: "/inbox",
     icon: "/assets/icons/message.svg",
     iconActive: "/assets/icon/message.svg",
   },
   {
     id: 4,
-    name: "Profile",
+    name: "profile",
     path: "/profile",
     icon: "/assets/icons/profile.svg",
     iconActive: "/assets/icon/profile.svg",
@@ -150,3 +150,130 @@ export const dataTable = [
     point: 97,
   },
 ];
+
+export const excludedPath = ["/signin", "/register"];
+
+export const merchantListData = [
+  {
+    id: 1,
+    name: "Pizza Hut",
+    image: "/assets/images/merchants/pizza-hut.png",
+  },
+  {
+    id: 2,
+    name: "Starbucks",
+    image: "/assets/images/merchants/starbucks.png",
+  },
+  {
+    id: 3,
+    name: "McDonald's",
+    image: "/assets/images/merchants/mcd.png",
+  },
+  {
+    id: 4,
+    name: "Domino's Pizza",
+    image: "/assets/images/merchants/domino-pizza.png",
+  },
+  {
+    id: 5,
+    name: "KFC",
+    image: "/assets/images/merchants/kfc.png",
+  },
+  {
+    id: 6,
+    name: "HokBen",
+    image: "/assets/images/merchants/hokben.png",
+  },
+];
+
+export const rewardCategories = [
+  {
+    id: 1,
+    name: "All",
+    icon: "",
+  },
+  {
+    id: 2,
+    name: "Food",
+    icon: "/assets/icons/burger.png",
+  },
+  {
+    id: 3,
+    name: "Groceries",
+    icon: "/assets/icons/groceries.png",
+  },
+  {
+    id: 4,
+    name: "Beverages",
+    icon: "/assets/icons/drink.png",
+  },
+];
+
+export const rewardList = [
+  {
+    id: 1,
+    name: "Monday Mood Booster Starbucks",
+    image: "/assets/images/rewards/starbucks.jpg",
+    brandLogo: "/assets/images/merchants/starbucks.png",
+    brandName: "Starbucks",
+    point: 250,
+  },
+  {
+    id: 2,
+    name: "KFC Value Serbu",
+    image: "/assets/images/rewards/kfc.jpg",
+    brandLogo: "/assets/images/merchants/kfc.png",
+    brandName: "KFC",
+    point: 172,
+  },
+  {
+    id: 3,
+    name: "Poromo PASTISEGAR",
+    image: "/assets/images/rewards/segari.jpg",
+    brandLogo: "/assets/images/merchants/segari.png",
+    brandName: "Segari",
+    point: 104,
+  },
+  {
+    id: 4,
+    name: "Domino’s: All i want for Christmas",
+    image: "/assets/images/rewards/domino.jpg",
+    brandLogo: "/assets/images/merchants/domino-pizza.png",
+    brandName: "Domino's Pizza",
+    point: 53,
+  },
+  {
+    id: 5,
+    name: "HokBen: Pay Day",
+    image: "/assets/images/rewards/hokben.jpg",
+    brandLogo: "/assets/images/merchants/hokeben.png",
+    brandName: "HokBen",
+    point: 147,
+  },
+  {
+    id: 6,
+    name: "SENIN HEMAT",
+    image: "/assets/images/rewards/paper-lunch.jpg",
+    brandLogo: "/assets/images/merchants/paper-lunch.png",
+    brandName: "Paper Lunch",
+    point: 104,
+  },
+  {
+    id: 7,
+    name: "Weekend SALE!",
+    image: "/assets/images/rewards/matahari.jpg",
+    brandLogo: "/assets/images/merchants/matahari.png",
+    brandName: "Matahari",
+    point: 74,
+  },
+  {
+    id: 8,
+    name: "HARMANAS",
+    image: "/assets/images/rewards/kopi-kenangan.jpg",
+    brandLogo: "/assets/images/merchants/kopi-kenangan.png",
+    brandName: "Kopi Kenangan",
+    point: 87,
+  },
+];
+
+export const RE_DIGIT = new RegExp(/^\d+$/);

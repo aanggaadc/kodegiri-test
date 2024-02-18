@@ -1,0 +1,64 @@
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: url("/assets/images/bg-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+  margin-bottom: 45px;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 76px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 36px;
+
+  span {
+    color: #007dfc;
+  }
+}
+
+.description {
+  max-width: 750px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 36px;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.ctaBtn {
+  width: 182px;
+  height: 50px;
+  border-radius: 100px;
+  border: 1px solid #bbbbbb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
+}

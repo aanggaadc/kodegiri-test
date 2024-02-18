@@ -1,0 +1,44 @@
+.container {
+  overflow: hidden;
+  min-height: 0;
+  min-width: 0;
+}
+
+.imageContainer {
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.sliderContainer {
+  margin-bottom: 48px;
+}
+
+.navigationContainer {
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.btnNavigation {
+  margin-inline: 20px;
+}
+
+.dots {
+  width: 13.26px;
+  height: 13.26px;
+  border-radius: 50%;
+  background: #c1c1c1;
+
+  &.active {
+    width: 39.77px;
+    border-radius: 11px;
+    background: #007dfc;
+  }
+}

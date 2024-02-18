@@ -11,9 +11,7 @@ function App() {
       <Header />
 
       <main>
-        <div className="main-wrapper">
-          <Routing />
-        </div>
+        <Routing />
       </main>
 
       <Footer />
