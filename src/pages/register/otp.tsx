@@ -132,7 +132,7 @@ export default function OTP({
       <div className={Styles.otpContainer}>
         {valueItems.map((digit, idx) => (
           <input
-            className={Styles.input}
+            className={Styles.inputOtp}
             key={idx}
             type="text"
             inputMode="numeric"

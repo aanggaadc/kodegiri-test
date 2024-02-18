@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import PointIcon from "../icons/point";
 import Styles from "./index.module.scss";
 
@@ -7,6 +8,7 @@ type RewardCardProps = {
   brandLogo: string;
   brandName: string;
   point: number;
+  path: string;
 };
 
 export default function RewardCard({
@@ -15,9 +17,12 @@ export default function RewardCard({
   brandLogo,
   brandName,
   point,
+  path,
 }: RewardCardProps) {
+  const navigate = useNavigate();
+
   return (
-    <article className={Styles.cardContainer}>
+    <article onClick={() => navigate(path)} className={Styles.cardContainer}>
       <div className={Styles.cardImage}>
         <img src={image} alt={name} />
       </div>
