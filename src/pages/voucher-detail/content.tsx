@@ -1,11 +1,58 @@
+import { useRef, useEffect } from "react";
+import { voucherNavigation } from "../../constant";
 import CalendarIcon from "../../components/icons/calendar";
 import Styles from "./content.module.scss";
 
-export default function Content() {
+interface ContentProps {
+  activeSection: string;
+  onScroll: (sectionId: string) => void;
+}
+
+export default function Content({ onScroll, activeSection }: ContentProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+
+      const newActiveSection = findActiveSection(scrollY);
+
+      if (newActiveSection !== activeSection && newActiveSection !== "") {
+        onScroll(newActiveSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeSection]);
+
+  const findActiveSection = (scrollY: number) => {
+    const offset = 150;
+
+    for (const nav of voucherNavigation) {
+      const element = document.getElementById(nav.id);
+      if (!element) continue;
+
+      const elementRect = element.getBoundingClientRect();
+      const elementTop = elementRect.top + window.scrollY;
+      const elementBottom = elementTop + elementRect.height;
+
+      if (scrollY >= elementTop - offset && scrollY < elementBottom - offset) {
+        return nav.id;
+      }
+    }
+
+    return "";
+  };
+
   return (
-    <article className={Styles.wrapper}>
+    <article ref={contentRef} className={Styles.wrapper}>
       <div className={Styles.container}>
-        <div className={Styles.brand}>
+        <div id="general" className={Styles.brand}>
           <div className={Styles.brandLogo}>
             <img src="/assets/images/merchants/starbucks.png" alt="starbucks" />
           </div>
@@ -39,7 +86,7 @@ export default function Content() {
 
         <div className={Styles.dashedDivider} />
 
-        <div className={Styles.section}>
+        <div id="benefit" className={Styles.section}>
           <p className={Styles.titleSection}>Benefit</p>
 
           <ul className={Styles.sectionList}>
@@ -72,7 +119,7 @@ export default function Content() {
           </ul>
         </div>
 
-        <div className={Styles.section}>
+        <div id="howToGet" className={Styles.section}>
           <p className={Styles.titleSection}>How to get</p>
 
           <ul className={`${Styles.sectionList} ${Styles.decimal}`}>
@@ -104,7 +151,7 @@ export default function Content() {
           </ul>
         </div>
 
-        <div className={Styles.section}>
+        <div id="termsCondition" className={Styles.section}>
           <p className={Styles.titleSection}>Terms and conditions</p>
 
           <ul className={`${Styles.sectionList} ${Styles.decimal}`}>

@@ -1,3 +1,28 @@
+export const RE_DIGIT = new RegExp(/^\d+$/);
+
+export const voucherNavigation = [
+  {
+    name: "General",
+    id: "general",
+  },
+  {
+    name: "Benefit",
+    id: "benefit",
+  },
+  {
+    name: "How to Get",
+    id: "howToGet",
+  },
+  {
+    name: "Term and Conditions",
+    id: "termsCondition",
+  },
+  {
+    name: "Another Promo",
+    id: "anotherPromo",
+  },
+];
+
 export const headerMenu = [
   {
     id: 1,
@@ -275,5 +300,3 @@ export const rewardList = [
     point: 87,
   },
 ];
-
-export const RE_DIGIT = new RegExp(/^\d+$/);
