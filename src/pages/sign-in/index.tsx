@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setLoggedIn } from "../../redux/authSlice";
+import { setLoginStatus } from "../../redux/authSlice";
 import { RootState } from "../../redux/store";
 
 import LayaouteLogo from "../../components/icons/layaoute-logo";
@@ -31,7 +31,13 @@ export default function SignIn() {
     );
 
     if (foundUser) {
-      dispatch(setLoggedIn(true));
+      dispatch(
+        setLoginStatus({
+          isLoggedIn: true,
+          username: foundUser.name,
+        })
+      );
+
       navigate("/");
     } else {
       alert("User not found or incorrect password");
