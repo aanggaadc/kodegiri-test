@@ -32,7 +32,7 @@ export default function SignIn() {
 
     if (foundUser) {
       dispatch(setLoggedIn(true));
-      navigate("/history");
+      navigate("/");
     } else {
       alert("User not found or incorrect password");
     }
