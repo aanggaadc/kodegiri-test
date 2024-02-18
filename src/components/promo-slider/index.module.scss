@@ -1,13 +1,44 @@
 .container {
-  width: 100%;
   overflow: hidden;
-  background: black;
+  min-height: 0;
+  min-width: 0;
 }
 
 .imageContainer {
-  max-width: 897.42px;
-  height: 438.31px;
-  overflow: hidden;
   border-radius: 10px;
-  background-color: aqua;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.sliderContainer {
+  margin-bottom: 48px;
+}
+
+.navigationContainer {
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.btnNavigation {
+  margin-inline: 20px;
+}
+
+.dots {
+  width: 13.26px;
+  height: 13.26px;
+  border-radius: 50%;
+  background: #c1c1c1;
+
+  &.active {
+    width: 39.77px;
+    border-radius: 11px;
+    background: #007dfc;
+  }
 }
