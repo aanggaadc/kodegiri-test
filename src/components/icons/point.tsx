@@ -17,7 +17,7 @@ export default function PointIcon({
         height: height ?? "18px",
       }}
     >
-      <g clip-path="url(#clip0_2015_598)">
+      <g clipPath="url(#clip0_2015_598)">
         <rect
           y="0.905396"
           width="19.9166"
@@ -41,7 +41,7 @@ export default function PointIcon({
         height="18.5884"
         rx="9.29418"
         stroke="#FBE8A6"
-        stroke-width="1.32774"
+        strokeWidth="1.32774"
       />
       <defs>
         <clipPath id="clip0_2015_598">
