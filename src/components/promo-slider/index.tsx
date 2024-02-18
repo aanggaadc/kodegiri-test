@@ -8,7 +8,11 @@ import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function PromoSlider() {
+export default function PromoSlider({
+  padding = "350px",
+}: {
+  padding?: string;
+}) {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -16,7 +20,7 @@ export default function PromoSlider() {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "350px",
+    centerPadding: padding,
     slidesToShow: 1,
     speed: 500,
     beforeChange: (_: number, next: number) => setActiveSlide(next),
