@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { RegisterType } from ".";
+import { RegisterType } from "../../types";
 
 import EyeIcon from "../../components/icons/eye";
 import Styles from "./index.module.scss";
