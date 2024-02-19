@@ -3,10 +3,10 @@ import { voucherNavigation } from "../../constant";
 import CalendarIcon from "../../components/icons/calendar";
 import Styles from "./content.module.scss";
 
-interface ContentProps {
+type ContentProps = {
   activeSection: string;
   onScroll: (sectionId: string) => void;
-}
+};
 
 export default function Content({ onScroll, activeSection }: ContentProps) {
   const contentRef = useRef<HTMLDivElement>(null);

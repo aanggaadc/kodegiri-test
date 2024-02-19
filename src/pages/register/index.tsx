@@ -2,19 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUsers } from "../../redux/usersSlice";
+import { RegisterType } from "../../types";
 
 import Form from "./form";
 import Otp from "./otp";
 import LayaouteLogo from "../../components/icons/layaoute-logo";
 import Styles from "./index.module.scss";
-
-export type RegisterType = {
-  name: string;
-  email: string;
-  phoneCode: string;
-  phoneNumber: string;
-  password: string;
-};
 
 export default function Register() {
   const dispatch = useDispatch();

@@ -1,11 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AuthStateType } from "../types";
 
-type AuthState = {
-  isLoggedIn: boolean;
-  username: string;
-};
-
-const initialState: AuthState = {
+const initialState: AuthStateType = {
   isLoggedIn: false,
   username: "",
 };
@@ -14,7 +10,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setLoginStatus: (state, action: PayloadAction<AuthState>) => {
+    setLoginStatus: (state, action: PayloadAction<AuthStateType>) => {
       state.isLoggedIn = action.payload.isLoggedIn;
       state.username = action.payload.username;
     },
