@@ -1,5 +1,8 @@
 # React + TypeScript + Vite
 
+Node version : 18,14,1
+Npm Version : 9.3.1
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
