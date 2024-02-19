@@ -1,4 +1,8 @@
-# React + TypeScript + Vite
+# # Loyalty Management App with React + Typescript + Vite
+
+Required Version : 
+- Node version : 18,14,1
+- Npm Version : 9.3.1
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
