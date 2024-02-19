@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUsers } from "../../redux/usersSlice";
 import { RegisterType } from "../../types";
+import { RootState } from "../../redux/store";
 
 import Form from "./form";
 import Otp from "./otp";
@@ -12,6 +13,8 @@ import Styles from "./index.module.scss";
 export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const users = useSelector((state: RootState) => state.users.users);
 
   const [stage, setStage] = useState("form");
   const [otp, setOtp] = useState("");
@@ -35,7 +38,10 @@ export default function Register() {
   };
 
   const handleToOtp = (e: React.FormEvent<HTMLFormElement>) => {
+    const foundUser = users.find((user) => user.email === data.email);
+
     e.preventDefault();
+    if (foundUser) return alert("user already register!");
     setStage("otp");
   };
 
