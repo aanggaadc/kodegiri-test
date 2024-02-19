@@ -126,7 +126,6 @@
   background: none;
   width: 30%;
   height: 100%;
-  font-family: "Plus Jakarta Sans";
 }
 
 .inputSearch {
@@ -143,7 +142,6 @@
   background: none;
   flex-grow: 1;
   height: 100%;
-  font-family: "Plus Jakarta Sans";
 }
 
 .btnSearch {
@@ -151,6 +149,7 @@
   height: 44px;
   border: none;
   border-radius: 4px;
+  background: #f9f9fb;
 
   display: flex;
   align-items: center;
@@ -160,7 +159,7 @@
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.02em;
-  text-align: left;
+  color: #272a2d;
 }
 
 .table {
