@@ -1,4 +1,4 @@
-# React + TypeScript + Vite
+# # Loyalty Management App with React + Typescript + Vite
 
 Required Version : 
 - Node version : 18,14,1
