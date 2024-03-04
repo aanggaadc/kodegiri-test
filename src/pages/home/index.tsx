@@ -2,7 +2,8 @@ import Hero from "./hero";
 import Merchants from "./merchants";
 import Rewards from "./rewards";
 import AppBanner from "./app-banner";
-import PromoSlider from "../../components/promo-slider";
+
+import { PromoSlider } from "../../components/shared";
 
 import Styles from "./index.module.scss";
 

@@ -1,5 +1,6 @@
 import PlayStoreIcon from "../../components/icons/play-store";
 import AppsStoreIcon from "../../components/icons/apps-store";
+import { openNewTab } from "../../helper";
 import Styles from "./hero.module.scss";
 
 export default function Hero() {
@@ -16,13 +17,7 @@ export default function Hero() {
 
       <div className={Styles.ctaContainer}>
         <button
-          onClick={() =>
-            window.open(
-              "https://play.google.com/",
-              "_blank",
-              "rel=noopener noreferrer"
-            )
-          }
+          onClick={() => openNewTab("https://play.google.com/")}
           className={Styles.ctaBtn}
         >
           <PlayStoreIcon />
@@ -30,13 +25,7 @@ export default function Hero() {
         </button>
 
         <button
-          onClick={() =>
-            window.open(
-              "https://www.apple.com/id/app-store/",
-              "_blank",
-              "rel=noopener noreferrer"
-            )
-          }
+          onClick={() => openNewTab("https://www.apple.com/id/app-store/")}
           className={Styles.ctaBtn}
         >
           <AppsStoreIcon />

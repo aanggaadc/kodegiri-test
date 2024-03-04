@@ -167,56 +167,30 @@
   color: #272a2d;
 }
 
-.table {
-  width: 100%;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
-  border-collapse: collapse;
+.firstColumn {
+  width: 40%;
+}
 
-  .flex {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+.secondColumn {
+  width: 25%;
+}
 
-  th {
-    height: 44px;
-    background: #eaecf0;
-    color: #667085;
-    text-align: left;
-    padding-inline: 10px;
-  }
+.thirdColumn {
+  width: 10%;
+}
 
-  td {
-    height: 72px;
-    background: #fff;
-    color: #101828;
-    padding-inline: 10px;
-    // border-bottom: 1px solid black;
-  }
+.fourthColumn {
+  width: 20%;
+}
 
-  .firstColumn {
-    width: 40%;
-  }
+.fifthColumn {
+  width: 5%;
+}
 
-  .secondColumn {
-    width: 25%;
-  }
-
-  .thirdColumn {
-    width: 10%;
-  }
-
-  .fourthColumn {
-    width: 20%;
-  }
-
-  .fifthColumn {
-    width: 5%;
-  }
+.flexData {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .point {

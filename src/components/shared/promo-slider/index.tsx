@@ -1,18 +1,14 @@
 import { useState, useRef } from "react";
 import Slider from "react-slick";
 
-import ChevronLeft from "../icons/chevron-left";
-import ChevronRight from "../icons/chevron-right";
+import ChevronLeft from "../../icons/chevron-left";
+import ChevronRight from "../../icons/chevron-right";
 import Styles from "./index.module.scss";
 import "./index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function PromoSlider({
-  padding = "350px",
-}: {
-  padding?: string;
-}) {
+export const PromoSlider = ({ padding = "350px" }: { padding?: string }) => {
   const sliderRef = useRef<Slider>(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -83,4 +79,4 @@ export default function PromoSlider({
       </div>
     </div>
   );
-}
+};
