@@ -1,3 +1,4 @@
+import { Table } from "../../components/shared/table";
 import { dataTable } from "../../constant";
 import Styles from "./index.module.scss";
 
@@ -41,42 +42,45 @@ export default function History() {
           </div>
         </div>
 
-        <table className={Styles.table}>
-          <thead>
-            <tr>
-              <th className={Styles.firstColumn}>
-                <div className={Styles.flex}>
+        <Table>
+          <Table.Head>
+            <Table.Row>
+              <Table.Column className={Styles.firstColumn}>
+                <div className={Styles.flexData}>
                   Merchant
                   <ArrowDown />
                 </div>
-              </th>
-              <th className={Styles.secondColumn}>Date</th>
-              <th className={Styles.thirdColumn}>Time</th>
-              <th className={Styles.fourthColumn}>Earned Points</th>
-              <th className={Styles.fifthColumn}></th>
-            </tr>
-          </thead>
-          <tbody>
+              </Table.Column>
+              <Table.Column className={Styles.secondColumn}>Date</Table.Column>
+              <Table.Column className={Styles.thirdColumn}>Time</Table.Column>
+              <Table.Column className={Styles.fourthColumn}>
+                Earned Points
+              </Table.Column>
+              <Table.Column className={Styles.fifthColumn}></Table.Column>
+            </Table.Row>
+          </Table.Head>
+
+          <Table.Body>
             {dataTable.map((data) => (
-              <tr key={data.id}>
-                <td className={Styles.firstColumn}>
-                  <div className={Styles.flex}>
+              <Table.Row key={data.id}>
+                <Table.Data>
+                  <div className={Styles.flexData}>
                     <img src={data.icon} alt={data.name} />
                     {data.name}
                   </div>
-                </td>
-                <td className={Styles.secondColumn}>{data.date}</td>
-                <td className={Styles.thirdColumn}>{data.time}</td>
-                <td className={Styles.fourthColumn}>
+                </Table.Data>
+                <Table.Data>{data.date}</Table.Data>
+                <Table.Data>{data.time}</Table.Data>
+                <Table.Data>
                   <div className={Styles.point}>+ {data.point} Point</div>
-                </td>
-                <td className={Styles.fifthColumn}>
+                </Table.Data>
+                <Table.Data>
                   <MoreVertical />
-                </td>
-              </tr>
+                </Table.Data>
+              </Table.Row>
             ))}
-          </tbody>
-        </table>
+          </Table.Body>
+        </Table>
 
         <div className={Styles.pagination}>
           <button className={Styles.btnPagination}>

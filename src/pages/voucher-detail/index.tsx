@@ -2,7 +2,8 @@ import { useState } from "react";
 import Hero from "./hero";
 import Navigation from "./navigation";
 import Content from "./content";
-import PromoSlider from "../../components/promo-slider";
+
+import { PromoSlider } from "../../components/shared";
 
 import Styles from "./index.module.scss";
 
