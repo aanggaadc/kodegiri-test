@@ -1,6 +1,7 @@
 import PlayStoreIcon from "../../components/icons/play-store";
 import AppsStoreIcon from "../../components/icons/apps-store";
 import LayaouteLogo from "../../components/icons/layaoute-logo";
+import { openNewTab } from "../../helper";
 import Styles from "./app-banner.module.scss";
 
 export default function AppBanner() {
@@ -28,13 +29,7 @@ export default function AppBanner() {
 
         <div className={Styles.ctaContainer}>
           <button
-            onClick={() =>
-              window.open(
-                "https://play.google.com/",
-                "_blank",
-                "rel=noopener noreferrer"
-              )
-            }
+            onClick={() => openNewTab("https://play.google.com/")}
             className={Styles.ctaBtn}
           >
             <PlayStoreIcon />
@@ -42,13 +37,7 @@ export default function AppBanner() {
           </button>
 
           <button
-            onClick={() =>
-              window.open(
-                "https://www.apple.com/id/app-store/",
-                "_blank",
-                "rel=noopener noreferrer"
-              )
-            }
+            onClick={() => openNewTab("https://www.apple.com/id/app-store/")}
             className={Styles.ctaBtn}
           >
             <AppsStoreIcon />
